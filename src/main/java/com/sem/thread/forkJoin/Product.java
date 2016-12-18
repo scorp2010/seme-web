@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.sem.thread;
+package com.sem.thread.forkJoin;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,6 +17,9 @@ import lombok.Setter;
 public class Product {
 	@Getter @Setter
 	private String name;
+	@Getter @Setter
 	private double price;
+	
+	
 	
 }
