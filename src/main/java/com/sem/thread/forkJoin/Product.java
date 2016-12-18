@@ -3,6 +3,7 @@
  */
 package com.sem.thread.forkJoin;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +15,7 @@ import lombok.Setter;
  * @date 2016年12月17日 下午11:05:58 
  * @version V1.0   
  */
-public class Product {
+public @Data class Product {
 	@Getter @Setter
 	private String name;
 	@Getter @Setter
