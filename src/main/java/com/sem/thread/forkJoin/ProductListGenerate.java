@@ -21,7 +21,7 @@ public class ProductListGenerate {
 	public List<Product> generate(int size){
 		return null;
 	}
-	public static void main(String[] args) {
+	public static void main1(String[] args) {
 		logger.info("随时随地侧事故");
 	}
 		

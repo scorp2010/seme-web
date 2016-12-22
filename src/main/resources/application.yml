@@ -1,0 +1,5 @@
+# Servlet Container Server settings
+server:
+    port: 8990
+    context-path: /web
+    env: ${server.env}
