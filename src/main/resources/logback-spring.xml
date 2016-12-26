@@ -90,7 +90,7 @@
         </rollingPolicy>  
 	</appender> -->
 
-	<root level="${log.level}">
+	<root level="info">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="ASYNC" />
 		<appender-ref ref="ERROR_FILE" />  
