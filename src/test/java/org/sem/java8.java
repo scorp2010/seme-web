@@ -11,6 +11,6 @@ package org.sem;
  * @date 2016年12月18日 下午5:33:44 
  * @version V1.0   
  */
-public class xx {
+public class java8 {
 
 }
