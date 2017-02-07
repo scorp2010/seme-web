@@ -3,6 +3,7 @@
  */
 package com.sem.thread.forkJoin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -18,9 +19,26 @@ import org.slf4j.LoggerFactory;
  */
 public class ProductListGenerate {
 	private static final Logger logger=LoggerFactory.getLogger(ProductListGenerate.class);
+	
 	public List<Product> generate(int size){
-		return null;
+		List<Product> ret=new ArrayList<Product>();
+
+		for (int i=0; i<size; i++){
+
+			Product product=new Product();
+
+			product.setName("Product"+i);
+
+			product.setPrice(10);
+
+			ret.add(product);
+		}
+
+		return ret;
+
 	}
+	
+	
 	public static void main1(String[] args) {
 		logger.info("随时随地侧事故");
 	}
