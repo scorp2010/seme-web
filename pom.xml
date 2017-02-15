@@ -38,6 +38,7 @@
 		<quartz.version>2.2.2</quartz.version>
 		<guava.version>19.0</guava.version>
 		<lombok.version>1.16.4</lombok.version>
+		<motan.version>0.2.2</motan.version>
 		
 	</properties>
 	<dependencies>
@@ -45,6 +46,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
 			<version>${springboot.version}</version>
+			<exclusions>
+				<exclusion>
+					<groupId>org.slf4j</groupId>
+					<artifactId>log4j-over-slf4j</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 		<!-- <dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -244,8 +251,53 @@
 			<version>${lombok.version}</version>
 		</dependency>
 		
+		<dependency>
+            <groupId>org.jboss.netty</groupId>
+            <artifactId>netty</artifactId>
+            <version>3.2.5.Final</version>
+        </dependency>
+		
+		<!-- weibo motan 分布式服务框架 -->
+		<dependency>
+		    <groupId>com.weibo</groupId>
+		    <artifactId>motan-core</artifactId>
+		    <version>${motan.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.weibo</groupId>
+		    <artifactId>motan-transport-netty</artifactId>
+		   <version>${motan.version}</version>
+		</dependency>
+		
+		<!-- only needed for spring-based features -->
+		<dependency>
+		    <groupId>com.weibo</groupId>
+		    <artifactId>motan-springsupport</artifactId>
+		    <version>${motan.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>com.weibo</groupId>
+		    <artifactId>motan-registry-zookeeper</artifactId>
+		    <version>0.2.1</version>
+	   </dependency>
+	   
+	   <!-- spring vault -->
+	   <dependency>
+	        <groupId>org.springframework.vault</groupId>
+	        <artifactId>spring-vault-core</artifactId>
+	        <version>1.0.0.M1</version>
+       </dependency>
+		
 	</dependencies>
 	
+	<repositories>
+	    <repository>
+	        <id>spring-milestone</id>
+	        <name>Spring Maven MILESTONE Repository</name>
+	        <url>http://repo.spring.io/libs-milestone</url>
+	    </repository>
+	</repositories>
+
 	<build>
 		<!-- <plugins>
 			<plugin>

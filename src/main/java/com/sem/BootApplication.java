@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceTransactionManagerA
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ImportResource;
 
+import com.weibo.api.motan.common.MotanConstants;
+import com.weibo.api.motan.util.MotanSwitcherUtil;
+
 @SpringBootApplication
 //@ImportResource("applicationContext.xml")
 @ImportResource(locations = "classpath*:/applicationContext.xml")
@@ -18,5 +21,8 @@ public class BootApplication
 	public static void main(String[] args)
 	{ 
           SpringApplication.run(BootApplication.class, args);
+          
+          MotanSwitcherUtil.setSwitcherValue(MotanConstants.REGISTRY_HEARTBEAT_SWITCHER,true);
+          System.out.println("open switch..");
 	}
 }

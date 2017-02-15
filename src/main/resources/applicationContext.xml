@@ -45,6 +45,7 @@
 	<import resource="jobs/agent/applicationContext-deduction-jobs.xml"/>
 	<import resource="jobs/agent/applicationContext-feerate-jobs.xml"/>
 	-->
+	<import resource="motan_server.xml"/>
 	<!--  
 	<bean id="taskExecutor"
 		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
