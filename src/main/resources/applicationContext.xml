@@ -45,17 +45,18 @@
 	<import resource="jobs/agent/applicationContext-deduction-jobs.xml"/>
 	<import resource="jobs/agent/applicationContext-feerate-jobs.xml"/>
 	-->
-	<import resource="motan_server.xml"/>
-	<!--  
-	<bean id="taskExecutor"
-		class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
-		<property name="corePoolSize" value="${threadPool.corePoolSize}" />
- 		<property name ="keepAliveSeconds" value ="30000" />   
-		<property name="maxPoolSize" value="${threadPool.maxPoolSize}" />
-		<property name ="queueCapacity" value ="${threadPool.queueCapacity}" />
-		<property name="WaitForTasksToCompleteOnShutdown" value="true" />
-	</bean>
-	-->
+	<!--<import resource="motan_server.xml"/>-->
+	<import resource="redis.xml"/>
+    <!--
+    <bean id="taskExecutor"
+      class="org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor">
+      <property name="corePoolSize" value="${threadPool.corePoolSize}" />
+       <property name ="keepAliveSeconds" value ="30000" />
+      <property name="maxPoolSize" value="${threadPool.maxPoolSize}" />
+      <property name ="queueCapacity" value ="${threadPool.queueCapacity}" />
+      <property name="WaitForTasksToCompleteOnShutdown" value="true" />
+    </bean>
+    -->
 
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
@@ -64,5 +65,18 @@
       		</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
+
+	<!-- 需要加入缓存的类或方法 -->
+	<bean id="methodCachePointCut"  class="org.springframework.aop.support.RegexpMethodPointcutAdvisor" >
+		<property name="advice" >
+			<ref bean="methodCacheInterceptor" />
+		</property>
+		<property name="patterns" >
+			<list>
+				<!-- 确定正则表达式列表 -->
+				<value>com\.mucfc\.msm\.service\.impl\...*ServiceImpl.*</value >
+			</list>
+		</property>
+	</bean >
 	
 </beans>

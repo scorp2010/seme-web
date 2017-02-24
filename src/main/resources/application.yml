@@ -3,3 +3,13 @@ server:
     port: 8990
     context-path: /web
     env: ${server.env}
+
+redis:
+  host: ${redis.host}
+  port: ${redis.port}
+  password: ${redis.password}
+  maxIdle: ${redis.maxIdle}
+  maxActive: ${redis.maxActive}
+  maxWait: ${redis.maxWait}
+  testOnBorrow: ${redis.testOnBorrow}
+  timeout: ${redis.timeout}
