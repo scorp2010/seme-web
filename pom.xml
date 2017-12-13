@@ -280,7 +280,13 @@
 		    <artifactId>motan-registry-zookeeper</artifactId>
 		    <version>0.2.1</version>
 	   </dependency>
-	   
+
+    <dependency>
+      <groupId>org.apache.zookeeper</groupId>
+      <artifactId>zookeeper</artifactId>
+      <version>3.4.8</version>
+    </dependency>
+
 	   <!-- spring vault -->
 	   <dependency>
 	        <groupId>org.springframework.vault</groupId>

@@ -46,9 +46,9 @@ public class RepeatingAnnotations {
 			System.out.println(filters.value()[0]);
 		}
 		
-		Optional< String > fullName = Optional.ofNullable( null );
-		System.out.println( "Full Name is set? " + fullName.isPresent() );        
-		System.out.println( "Full Name: " + fullName.orElseGet( () -> "[none]" ) ); 
-		System.out.println( fullName.map( s -> "Hey " + s + "!" ).orElse( "Hey Stranger!" ) );
+//		Optional< String > fullName = Optional.ofNullable( null );
+//		System.out.println( "Full Name is set? " + fullName.isPresent() );
+//		System.out.println( "Full Name: " + fullName.orElseGet( () -> "[none]" ) );
+//		System.out.println( fullName.map( s -> "Hey " + s + "!" ).orElse( "Hey Stranger!" ) );
 	}
 }
